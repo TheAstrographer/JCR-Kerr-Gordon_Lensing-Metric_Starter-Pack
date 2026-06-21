@@ -4,15 +4,15 @@
 
 Copyright (c) 2026 Joshua Christopher Ryan
 
-1. Rights Granted
+## Rights Granted
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software, associated documentation, equations, models, and data 
 (the "Work"), to use, copy, and modify the Work **solely for non-commercial 
 educational, research, or personal purposes**, subject to the following conditions.
 
-## Strict Conditions and Prohibitions
+1. Strict Conditions and Prohibitions
 
-A. **Non-Commercial Use Only**  
+1.1 **Non-Commercial Use Only**  
    The Work, any modifications, derivative works, or outputs generated from it 
    (including but not limited to cosmological models, Hubble effective terms, 
    torque contributions, conformal corrections, vortex frameworks, magnification 
@@ -22,7 +22,7 @@ A. **Non-Commercial Use Only**
    optical systems, lenses, software tools, consulting services, or any 
    paid applications.
 
-B. **No Patenting or IP Restriction**  
+1.2 **No Patenting or IP Restriction**  
    No person or entity may file patents, claim intellectual property rights, 
    or otherwise seek to restrict the use of the mathematical equations, 
    physical frameworks, concepts, or formulations contained in this Work 
@@ -33,14 +33,14 @@ B. **No Patenting or IP Restriction**
    The fundamental ideas and equations belong to the public domain of scientific 
    understanding and shall not be privately owned or monopolized.
 
-C. **Required Attribution**  
+1.3 **Required Attribution**  
    All copies, distributions, publications, presentations, or derivative works 
    must prominently include the following credit:
    
    "Based on the work of Joshua Christopher Ryan — Hubble Tension Starterpack 
    (2026) — Kerr-Gordon Vortex Framework"
 
-D. **Share-Alike**  
+1.4 **Share-Alike**  
    Any derivative works or modifications must be released under the same 
    license terms and conditions.
 
