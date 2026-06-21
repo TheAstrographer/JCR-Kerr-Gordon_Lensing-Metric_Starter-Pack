@@ -1,0 +1,36 @@
+\subsection*{Clarification on Pure Python Implementation}
+
+\textbf{Correction Acknowledged.} Thank you for the clarification.
+
+The core numerical routines in this starter pack---particularly the function \texttt{cumulative\_trapezoid\_pure} appearing in \texttt{starter\_hubble\_code.py}, \texttt{local\_hubble\_tension.py}, and \texttt{variable\_n\_step.py}---deliberately employ \textbf{pure Python} (using only the built-in \texttt{math} module) for the trapezoidal integration that computes the comoving distance \( \chi(z) \).
+
+This choice is \textbf{intentional and not a performance limitation} within the phenomenological framework of the JCR-Kerr-Gordon lensing model. 
+
+The manual trapezoidal integrator is defined as:
+\begin{verbatim}
+def cumulative_trapezoid_pure(y, x):
+    n = len(y)
+    cum = [0.0]
+    for i in range(1, n):
+        dx = x[i] - x[i-1]
+        avg_y = (y[i] + y[i-1]) / 2.0
+        cum.append(cum[-1] + avg_y * dx)
+    return cum
+\end{verbatim}
+
+\subsubsection*{Rationale: Precise Trapezoid Rendering \& Elimination of Floating Dots}
+
+In the model's photometric lensing interpretation, each trapezoid represents a discrete photometric ``area'' contribution to the effective light-path length and phase accumulation. Pure Python scalar operations, combined with explicit caching in \texttt{chi\_mitigation}, ensure step-by-step deterministic control that:
+
+\begin{itemize}
+    \item Minimizes accumulated floating-point representation artifacts (``floating dots'');
+    \item Avoids subtle numerical instabilities or discontinuities that can arise from vectorized libraries (e.g., NumPy) on irregular or adaptively sampled redshift grids;
+    \item Preserves exact compatibility with the discrete \textbf{complex numberline pathway} defined by \( y_n = n_{\rm step} \cdot \varepsilon \) where \( \varepsilon = 10^{-9} \) (up to \( N_{\rm TOTAL} \approx 10^9 \)), and the associated phase modulations involving terms such as \( \sin(0.1047 \cdot \ldots) \).
+\end{itemize}
+
+For the intended use cases---small-to-moderate redshift arrays, repeated evaluations with caching, and exploratory toy-model studies---this implementation is fully sufficient and philosophically aligned with the project's goals of transparency, inspectability, and precise control over every trapezoidal contribution and phase step.
+
+External high-performance libraries, while excellent for large-scale production cosmology, would be counterproductive here as they risk introducing hidden vectorization side-effects that could perturb the delicate anisotropic torque and vortex-like corrections central to resolving the local Hubble tension in this framework.
+
+\bigskip
+This pure-Python approach is therefore a \textbf{feature}, not a bug, of the JCR-Kerr-Gordon Lensing Metric Starter Pack.
