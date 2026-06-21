@@ -4,7 +4,7 @@
 
 Copyright (c) 2026 Joshua Christopher Ryan
 
-## Rights Granted
+1. Rights Granted
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software, associated documentation, equations, models, and data 
 (the "Work"), to use, copy, and modify the Work **solely for non-commercial 
